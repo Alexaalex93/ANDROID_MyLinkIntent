@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //MIRAR MANIFEST!!
+        //MIRAR MANIFEST!! el exported true es para que te salga de sugerencia desde aplicaciones externas
         Button button = (Button) findViewById(R.id.boton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,5 +28,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, MainActivity.class); //Para volver a la pantalla principal de la segunda aplicacion no de la lanzada por el intent
+        startActivity(i);
     }
 }
